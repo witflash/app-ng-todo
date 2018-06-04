@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ValidateService } from './validate.service';
 
 @NgModule({
   imports: [CommonModule],
@@ -18,6 +17,7 @@ export class ValidateModule {
     console.log('allElements: ', allElements);
     this.checkDuplicate(allElements);
     this.checkEmpty();
+    console.log('this.isValid: ', this.isValid);
     return this.isValid;
   }
 

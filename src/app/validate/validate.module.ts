@@ -7,7 +7,7 @@ import { ValidateService } from './validate.service';
   declarations: [],
 })
 export class ValidateModule {
-  isValid: boolean = false;
+  isValid: boolean = true;
   singleElement: string;
 
   constructor(singleElement) {
@@ -16,24 +16,25 @@ export class ValidateModule {
 
   init(allElements): ValidateModule {
     console.log('allElements: ', allElements);
-    this.checkEmpty();
     this.checkDuplicate(allElements);
+    this.checkEmpty();
     return this.isValid;
   }
 
   checkEmpty() {
-    if (this.singleElement.length > 0) {
-      this.isValid = true;
-    } else {
+    if (this.singleElement.length === 0) {
+      this.isValid = false;
       console.log('The field must contain any symbols');
+      return;
     }
   }
+
   checkDuplicate(allElements) {
-    this.isValid = true;
     for (let i = 0; i < allElements.length; i += 1) {
       if (this.singleElement === allElements[i].title) {
         this.isValid = false;
         console.log('This is duplicate!');
+        return;
       }
     }
   }

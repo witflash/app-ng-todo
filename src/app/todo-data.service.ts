@@ -1,18 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Todo } from './todo';
+import { ValidateModule } from './validate/validate.module';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TodoDataService {
-
   lastId: number = 0;
   todos: Todo[] = [];
 
-  constructor() { }
+  constructor() {}
 
   // Simulate POST /todos
   addTodo(todo: Todo): TodoDataService {
+    const Validator = new ValidateModule(todo.title);
+    Validator.init(this.todos);
+
+    if (Validator.isValid === false) {
+      console.log('Field is not valid!');
+      return;
+    }
     if (!todo.id) {
       todo.id = ++this.lastId;
     }
@@ -43,17 +50,14 @@ export class TodoDataService {
 
   // Simulate GET /todos/:id
   getTodoById(id: number): Todo {
-    return this.todos
-      .filter(todo => todo.id === id)
-      .pop();
+    return this.todos.filter(todo => todo.id === id).pop();
   }
 
   // Toggle todo complete
-  toggleTodoComplete(todo: Todo){
+  toggleTodoComplete(todo: Todo) {
     let updatedTodo = this.updateTodoById(todo.id, {
-      complete: !todo.complete
+      complete: !todo.complete,
     });
     return updatedTodo;
   }
-
 }

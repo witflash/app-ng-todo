@@ -2,4 +2,10 @@
   <app-logo></app-logo>
   <h1>My Todos</h1>
   <input class="new-todo" placeholder="What needs to be done?" autofocus="" [(ngModel)]="newTodo.title" (keyup.enter)="addTodo()">
+  <label for="new-priority">Priority: </label>
+  <select id="new-priority" class="newtodo__priority" [(ngModel)]="newTodo.priority">
+    <option value="1">Low</option>
+    <option value="2">Medium</option>
+    <option value="3">High</option>
+  </select>
 </header>

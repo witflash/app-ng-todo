@@ -11,6 +11,7 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoListItemComponent } from './todo-list-item/todo-list-item.component';
 import { TodoListFooterComponent } from './todo-list-footer/todo-list-footer.component';
 import { LogoComponent } from './logo/logo.component';
+import { PriorityDirective } from './priority.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LogoComponent } from './logo/logo.component';
     TodoListComponent,
     TodoListItemComponent,
     TodoListFooterComponent,
-    LogoComponent
+    LogoComponent,
+    PriorityDirective
   ],
   imports: [
     BrowserModule,

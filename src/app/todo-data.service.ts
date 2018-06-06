@@ -25,6 +25,8 @@ export class TodoDataService {
       todo.id = ++this.lastId;
     }
     this.todos.push(todo);
+    console.log('todo: ', todo);
+    console.log('this.todos: ', this.todos);
     return this;
   }
 

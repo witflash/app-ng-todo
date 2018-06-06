@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Todo } from './todo';
 import { ValidateModule } from './validate/validate.module';
+import { ValidateService } from './validate/validate.service';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +14,7 @@ export class TodoDataService {
 
   // Simulate POST /todos
   addTodo(todo: Todo): TodoDataService {
-    const Validator = new ValidateModule(todo.title);
+    const Validator = new ValidateService(todo.title);
     Validator.init(this.todos);
 
     if (Validator.isValid === false) {

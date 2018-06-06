@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { TodoDataService } from '../todo-data.service';
 
 @Component({
   selector: 'app-logo',
   templateUrl: './logo.component.html',
   styleUrls: ['./logo.component.css']
 })
-export class LogoComponent implements OnInit {
+export class LogoComponent {
 
-  constructor() { }
+  constructor(private data: TodoDataService) { }
 
-  ngOnInit() {
+  getAllTodos(): string {
+    return this.data.todos.length ? this.data.todos.length.toString() : '';
   }
 
+  getLabel(): string {
+    const count = this.getAllTodos();
+    if(count) {
+      return this.getAllTodos() === '1' ? 'item' : 'items'
+    } else {
+      return '';
+    }
+  }
 }

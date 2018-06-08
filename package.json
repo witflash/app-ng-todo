@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "json-server": "json-server --watch db.json"
+    "json-server": "node json-server.js"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +22,7 @@
     "@angular/platform-browser-dynamic": "^6.0.2",
     "@angular/router": "^6.0.2",
     "autoprefixer": "^8.5.1",
+    "body-parser": "^1.18.3",
     "core-js": "^2.5.4",
     "json-server": "^0.13.0",
     "node-sass": "^4.9.0",

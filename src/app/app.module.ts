@@ -16,6 +16,10 @@ import { ApiService } from './api.service';
 import { AppRoutingModule } from "./app-routing.module";
 import { TodosComponent } from './todos/todos.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SessionService } from './session.service';
+import { AuthService } from './auth.service';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -28,9 +32,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     PriorityDirective,
     TodosComponent,
     PageNotFoundComponent,
+    SignInComponent,
   ],
-  imports: [AppRoutingModule, BrowserModule, FormsModule, HttpModule],
-  providers: [TodoDataService, ApiService],
+  imports: [AppRoutingModule, BrowserModule, FormsModule, HttpModule, ReactiveFormsModule],
+  providers: [TodoDataService, ApiService, SessionService, AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

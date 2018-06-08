@@ -1,12 +1,6 @@
 {
   "todos": [
     {
-      "title": "My first task",
-      "priority": "1",
-      "complete": false,
-      "id": 1
-    },
-    {
       "title": "Add validation to the app Todo",
       "priority": "1",
       "complete": false,

@@ -13,6 +13,9 @@ import { TodoListFooterComponent } from './todo-list-footer/todo-list-footer.com
 import { LogoComponent } from './logo/logo.component';
 import { PriorityDirective } from './priority.directive';
 import { ApiService } from './api.service';
+import { AppRoutingModule } from "./app-routing.module";
+import { TodosComponent } from './todos/todos.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +26,10 @@ import { ApiService } from './api.service';
     TodoListFooterComponent,
     LogoComponent,
     PriorityDirective,
+    TodosComponent,
+    PageNotFoundComponent,
   ],
-  imports: [BrowserModule, FormsModule, HttpModule],
+  imports: [AppRoutingModule, BrowserModule, FormsModule, HttpModule],
   providers: [TodoDataService, ApiService],
   bootstrap: [AppComponent],
 })

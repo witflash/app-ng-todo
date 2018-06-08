@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Todo } from './todo';
 // import { ValidateModule } from './validate/validate.module';
-import { ValidateService } from './validate/validate.service';
+// import { ValidateService } from './validate/validate.service';
 import { ApiService } from './api.service';
 import { Observable } from 'rxjs/Observable';
 

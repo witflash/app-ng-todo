@@ -1,19 +1,34 @@
 {
   "todos": [
     {
-      "id": 1,
       "title": "My first task",
-      "complete": false
+      "priority": "1",
+      "complete": false,
+      "id": 1
     },
     {
-      "id": 2,
       "title": "Add validation to the app Todo",
-      "complete": false
+      "priority": "1",
+      "complete": false,
+      "id": 2
     },
     {
-      "id": 3,
       "title": "Make route service",
-      "complete": false
+      "priority": "1",
+      "complete": false,
+      "id": 3
+    },
+    {
+      "title": "Test REST API",
+      "priority": "1",
+      "complete": false,
+      "id": 4
+    },
+    {
+      "title": "This is task with medium priority",
+      "priority": "2",
+      "complete": false,
+      "id": 5
     }
   ]
 }

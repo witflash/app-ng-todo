@@ -1,7 +1,8 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { TodosComponent } from "./todos/todos.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
+import { TodosComponent } from "./todos/todos.component";
+import { TodosResolver } from "./todos.resolver";
 
 const routes: Routes = [
 	{
@@ -11,7 +12,13 @@ const routes: Routes = [
 	},
 	{
 		path: 'todos',
-		component: TodosComponent
+		component: TodosComponent,
+		data: {
+			title: 'Example of static route data'
+		},
+		resolve: {
+			todos: TodosResolver
+		}
 	},
 	{
 		path: '**',
@@ -22,7 +29,7 @@ const routes: Routes = [
 @NgModule({
 	imports: [RouterModule.forRoot(routes)],
 	exports: [RouterModule],
-	providers: []
+	providers: [TodosResolver]
 })
 export class AppRoutingModule {
 
